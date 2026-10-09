@@ -9,3 +9,5 @@ def test_amount_by_transaction_id():
 
     assert sum(source.values()) == sum(target.values())
     assert source == target
+
+    
