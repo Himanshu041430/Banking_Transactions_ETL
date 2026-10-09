@@ -1,10 +1,6 @@
-from src.db_connection import get_connection
+def test_reject_leakage(db_connection):
 
-
-def test_reject_leakage():
-
-    connection = get_connection()
-    cursor = connection.cursor()
+    cursor = db_connection.cursor()
 
     cursor.execute("""
         SELECT COUNT(*)
@@ -16,11 +12,11 @@ def test_reject_leakage():
     leakage_count = cursor.fetchone()[0]
 
     cursor.close()
-    connection.close()
 
     print("Rejected Rows Found In Target:", leakage_count)
 
     assert leakage_count == 0
+    
 
     
 
