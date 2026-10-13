@@ -1,3 +1,6 @@
+import pytest
+
+@pytest.mark.db
 def test_reject_leakage(db_connection):
 
     cursor = db_connection.cursor()
@@ -16,6 +19,8 @@ def test_reject_leakage(db_connection):
     print("Rejected Rows Found In Target:", leakage_count)
 
     assert leakage_count == 0
+
+
     
 
     

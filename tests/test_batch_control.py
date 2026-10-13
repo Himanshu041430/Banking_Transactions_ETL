@@ -1,3 +1,7 @@
+import pytest
+
+@pytest.mark.db
+
 def test_latest_batch_control(db_connection):
 
     cursor = db_connection.cursor()

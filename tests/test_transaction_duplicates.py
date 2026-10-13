@@ -1,4 +1,6 @@
+import pytest
 
+@pytest.mark.db
 def test_duplicate_transaction_id(db_connection):
 
     cursor = db_connection.cursor()
@@ -21,4 +23,5 @@ def test_duplicate_transaction_id(db_connection):
     print("Duplicate TransactionID Count:", duplicate_count)
 
     assert duplicate_count == 0
+
     

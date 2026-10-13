@@ -1,5 +1,11 @@
 import csv
+import pytest
 from datetime import date
+
+pytestmark = [
+    pytest.mark.csv,
+    pytest.mark.negative
+]
 
 VALID_TRANSACTION_TYPES = {"DEBIT", "CREDIT"}
 
@@ -71,7 +77,5 @@ def test_future_transaction_date_detected():
     ]
 
     assert len(future_dates) > 0
-    
 
- 
     

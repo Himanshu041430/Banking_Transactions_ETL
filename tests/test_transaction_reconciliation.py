@@ -1,3 +1,7 @@
+import pytest
+
+@pytest.mark.db
+@pytest.mark.reconciliation
 def test_transaction_reconciliation(db_connection):
 
     cursor = db_connection.cursor()

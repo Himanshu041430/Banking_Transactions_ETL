@@ -1,3 +1,8 @@
+import pytest
+
+@pytest.mark.db
+@pytest.mark.negative
+
 def test_reject_reasons(db_connection):
 
     expected = {
@@ -33,5 +38,9 @@ def test_reject_reasons(db_connection):
     print("Actual:", actual)
 
     assert actual == expected
+    
+
+
+
     
     
